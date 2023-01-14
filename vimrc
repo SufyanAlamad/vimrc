@@ -29,6 +29,8 @@ colorscheme desert
 " colorscheme wombat256
 " turn line numbers on
 set number
+" turn relative line numbers on as well
+set relativenumber
 " highlight matching braces
 set showmatch
 
