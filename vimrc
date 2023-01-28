@@ -23,14 +23,10 @@ set textwidth=120
 " turn syntax highlighting on
 " let g:solarized_termcolors=256
 syntax enable
-set background=dark
-colorscheme desert
 " highlight Normal ctermfg=black ctermbg=lightgrey
 " colorscheme wombat256
 " turn line numbers on
 set number
-" turn relative line numbers on as well
-set relativenumber
 " highlight matching braces
 set showmatch
 
@@ -46,7 +42,13 @@ call plug#begin()
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/syntastic'
+Plug 'vimwiki/vimwiki'
+Plug 'unblevable/quick-scope'
+Plug 'dracula/vim',{'as':'dracula'}
 call plug#end()
+
+colorscheme dracula
 
 let g:fzf_layout = { 'up': '~50%' }
 nnoremap <C-f> :Files<Cr>
