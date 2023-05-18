@@ -47,10 +47,13 @@ call plug#end()
 
 colorscheme dracula
 
+" Ctrl+f to search files starting from where vim was opened.
 let g:fzf_layout = { 'up': '~50%' }
 nnoremap <C-f> :Files<Cr>
+" Space to search for text starting from where vim was opened.
 map <space> :Rg<CR>
 
+" Ctrl+n to open file explorer in current file directory.
 nnoremap <C-n> :NERDTreeFind<CR>
 
 " Enter 'reader' mode.
