@@ -33,19 +33,16 @@ set showmatch
 set visualbell
 set t_vb=
 
-packadd termdebug
-set mouse=a
-set ttymouse=sgr
-let g:termdebug_wide=1
-
 call plug#begin()
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/syntastic'
 Plug 'vimwiki/vimwiki'
-Plug 'unblevable/quick-scope'
+Plug 'preservim/nerdtree'
 Plug 'dracula/vim',{'as':'dracula'}
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 colorscheme dracula
@@ -53,3 +50,19 @@ colorscheme dracula
 let g:fzf_layout = { 'up': '~50%' }
 nnoremap <C-f> :Files<Cr>
 map <space> :Rg<CR>
+
+nnoremap <C-n> :NERDTreeFind<CR>
+
+" Enter 'reader' mode.
+nnoremap Q :call ToggleReader()<CR>
+let g:readerMode=0
+function! ToggleReader()
+	if g:readerMode
+		execute 'Goyo!'
+		execute 'Limelight!'
+	else
+		execute 'Goyo'
+		execute 'Limelight'
+	end
+	let g:readerMode = !g:readerMode
+endfunction
